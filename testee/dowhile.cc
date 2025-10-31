@@ -1,3 +1,8 @@
+/**
+ * The do-while Segmento is just a refactored version of the original
+ * function found in Crystal Pixels M1.0.4. 
+ */
+
 inline void log(unsigned int x, unsigned int y,
                 unsigned int x2, unsigned int y2);
 

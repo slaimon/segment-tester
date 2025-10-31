@@ -1,3 +1,8 @@
+/**
+ * The for-loop Segmento is a modified version of the do-while.
+ * See README.MD for details.
+ */
+
 inline void log(unsigned int x, unsigned int y,
                 unsigned int x2, unsigned int y2);
 
