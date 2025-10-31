@@ -48,5 +48,5 @@ g++ csv_tester.cc -DFILENAME="testee/forloop.cc" -o csv_forloop
 ./csv_forloop err_1280_800.csv 1280 800
 ```
 
-This will test the for-loop version of the function on all the critical inputs found. If no
-assertion is triggered, it means that this new version can handle all those inputs.
+This will test the for-loop version of the function on all the critical inputs found. If nothing is
+printed, it means that this new version can handle all those inputs.
