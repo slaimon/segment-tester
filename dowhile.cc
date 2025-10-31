@@ -1,6 +1,11 @@
 inline void log(unsigned int x, unsigned int y,
                 unsigned int x2, unsigned int y2);
-inline bool Dot_3x3(unsigned int x, unsigned int y);
+
+inline bool Dot_3x3(unsigned int x, unsigned int y) {
+    if (x > width || y > height)
+        return false;
+    return true;
+}
 
 void Segmento (unsigned int x, unsigned int y,
               unsigned int x2, unsigned int y2)

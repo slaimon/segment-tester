@@ -26,12 +26,6 @@ inline void log(unsigned int x, unsigned int y,
     cout << x << "," << y << "," << x2 << "," << y2 << endl;
 }
 
-inline bool Dot_3x3(unsigned int x, unsigned int y) {
-    if (x > width || y > height)
-        return false;
-    return true;
-}
-
 int main(int argc, char** argv) {
     if (argc != 4) {
         cout << "Usage: " << argv[0] << " <NUM_TESTS> <WIDTH> <HEIGHT>" << endl;

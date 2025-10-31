@@ -21,12 +21,6 @@ inline void log(unsigned int x, unsigned int y,
     cout << x << "," << y << "," << x2 << "," << y2 << endl;
 }
 
-inline bool Dot_3x3(unsigned int x, unsigned int y) {
-    if (x > width || y > height)
-        return false;
-    return true;
-}
-
 vector<vector<unsigned int>> readCSV(const string& filename) {
     vector<vector<unsigned int>> data;
     ifstream file(filename);
