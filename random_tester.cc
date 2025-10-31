@@ -4,19 +4,20 @@
 #include <string>
 using namespace std;
 /*
-  Test random values on the do-while version of Segmento,
+  Test random values on a given version of Segmento,
   logging error inputs as they are found.
 */
 
 unsigned int width;
 unsigned int height;
 
-#ifdef DOWHILE
-#include "dowhile.cc"
-#elifdef FORLOOP
-#include "forloop.cc"
+// ugly expand-and-stringize trick
+#define STRR(x) #x
+#define STR(x) STRR(x)
+#ifdef FILENAME
+#include STR(FILENAME)
 #else
-#error "Please define one of the following macros: DOWHILE or FORLOOP"
+#error "Please define FILENAME with the path to the Segmento function you want tested."
 #endif
 
 inline void log(unsigned int x, unsigned int y,
@@ -34,7 +35,7 @@ inline bool Dot_3x3(unsigned int x, unsigned int y) {
 int main(int argc, char** argv) {
     if (argc != 4) {
         cout << "Usage: " << argv[0] << " <NUM_TESTS> <WIDTH> <HEIGHT>" << endl;
-        cout << "Run a given number of random tests on the do-while version of Segmento,"
+        cout << "Run a given number of random tests on the "<< STR(FILENAME) << " version of Segmento, "
             << "on a canvas with the given width and height, and print inputs that produce errors" << endl;
         return -1;
     }
