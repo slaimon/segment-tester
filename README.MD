@@ -50,3 +50,35 @@ g++ csv_tester.cc -DFILENAME="testee/forloop.cc" -o csv_forloop
 
 This will test the for-loop version of the function on all the critical inputs found. If nothing is
 printed, it means that this new version can handle all those inputs.
+
+## Old version vs. new
+
+The file `testee/dowhile.cc` contains a refactored version of the original Segmento found in
+Crystal Pixels version M1.0.4. It should be equivalent and, in fact, seems to crash just as often
+as the original when the game renders in 1280x800 resolution.
+
+The file `testee/forloop.cc` contains a modified version of the do-while Segmento. In it, the
+`do-while` loop is replaced with a `for` loop that *should* run the same number of iterations;
+however, in practice it seems that this version is much more stable and doesn't risk passing
+invalid input to `Dot_3x3`.
+
+The fact that the do-while-loop should run `L` times is proven by observing that the do-while guard
+becomes false after `N` iterations, as soon as `N` satisfies the inequalty:
+
+```text
+brush_x + N*dx >= end
+```
+
+We then use the following identities to simplify:
+
+```text
+brush_x = x * 2^16
+dx = (x2-x) * 2^16 / L
+end = x2 * 2^16
+```
+
+After some algebra, we come to the conclusion that N >= L. So, why aren't the two versions
+equivalent in practice? I don't know :)
+
+But what's important is that the for-loop version is more readable, doesn't crash and draws decent
+lines.
