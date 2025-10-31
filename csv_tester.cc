@@ -6,8 +6,8 @@
 #include <string>
 using namespace std;
 /*
-  Test the values in err.csv on the for-loop version
-  of Segmento to see if they still cause a problem 
+  Test the inputs in a .csv file on a given version of Segmento,
+  logging the ones that cause an error.
 */
 
 unsigned int width;
