@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
     width = stoul(argv[2]);
     height = stoul(argv[3]);
 
-    for(int i = 0; i < tests.size(); i++) {
+    for(unsigned int i = 0; i < tests.size(); i++) {
         run(tests[i]);
     }
 
